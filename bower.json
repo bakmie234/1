@@ -1,0 +1,21 @@
+{
+  "name": "1",
+  "version": "0.0.0",
+  "authors": [
+    "bakmie234 <bakmie234@gmail.com>"
+  ],
+  "description": "ngarep",
+  "main": "main",
+  "keywords": [
+    "ngarep"
+  ],
+  "license": "MIT",
+  "homepage": "localhost",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
