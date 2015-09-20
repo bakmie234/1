@@ -9,6 +9,8 @@
   "author": "bakmie",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.9.3",
+    "gulp": "^3.9.0",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.9",
     "karma-chrome-launcher": "^0.2.0",

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../3rdParty/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>
+                gulp cheat sheet
+            </h2>
+            <p>
+                Disini ada angular juga lho..
+            </p>
+
+            <h3>
+                Browser-Sync
+            </h3>
+            <p>
+                Buat livereload dsb.. Bisa watch juga. Banyak confignya
+                jadi kayak grunt.
+            </p>
+            <pre>
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        },
+        port: 8080,
+        files: ["*/**/*.*"]
+    });
+});
+            </pre>
+            <h3>Nodemon</h3>
+            <p>
+                Restart node server kalo ada file berubah.
+                Kalo cuma static html + angular ga usah pake
+            </p>
+            <div ng-app>
+                {{2+2}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../3rdParty/angular.js"></script>
+<script src="../3rdParty/jquery.min.js"></script>
+<script src="../3rdParty/bootstrap.js"></script>
+</body>
+</html>
