@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../3rdParty/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Git Cheat Sheet</h2>
+            <p>
+                Init
+            </p>
+            <pre>
+git init
+            </pre>
+            <p>
+                Stage
+            </p>
+            <pre>
+// add all file
+git add *
+
+// with wildcard
+git add dir/*.txt
+            </pre>
+            <p>
+                Unstage/Reset
+            </p>
+            <pre>
+git reset filename
+
+//reset all
+git reset
+            </pre>
+            <p>
+                Commit
+            </p>
+            <pre>
+git commit -m "comment for commit"
+            </pre>
+            <p>
+                See Difference
+            </p>
+            <pre>
+git diff: diff between working directory and staged.
+git diff –cached: diff between staged and last commit.
+git diff HEAD: diff between working directory last commit.
+            </pre>
+            <p>
+                Also, you can use third party difftool with
+            </p>
+            <pre>
+git difftool
+            </pre>
+        </div>
+    </div>
+</div>
+
+<script src="../3rdParty/angular.js"></script>
+<script src="../3rdParty/jquery.min.js"></script>
+<script src="../3rdParty/bootstrap.js"></script>
+</body>
+</html>

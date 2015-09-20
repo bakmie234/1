@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../3rdParty/bootstrap.css"/>
+    <style>
+        .done-true {
+            text-decoration: line-through;
+            color: grey;
+        }
+        .done-false {
+            color: red;
+        }
+
+    </style>
+</head>
+<body ng-app="todoList">
+<div class="container">
+    <div class="row">
+        <div ng-include="'todoList/todoList.html'"></div>
+    </div>
+</div>
+
+<script src="../3rdParty/angular.js"></script>
+<script src="../3rdParty/jquery.min.js"></script>
+<script src="../3rdParty/bootstrap.js"></script>
+<!-- inject:js -->
+<script src="/todoList/todoList.js"></script>
+<script src="/todoList/controller.js"></script>
+<!-- endinject -->
+</body>
+</html>
