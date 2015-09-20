@@ -45,7 +45,32 @@ gulp.task('browser-sync', function() {
             <h3>
                 wiredep + gulp-inject
             </h3>
+            <p>
+                inject custom javascript atau css file
+            </p>
+            <pre>
+var gulp = require('gulp');
+var inject = require('gulp-inject');
 
+gulp.task('index', function () {
+  var target = gulp.src('./src/index.html');
+  // It's not necessary to read the files (will speed up things), we're only after their paths:
+  var sources = gulp.src(['./src/**/*.js', './src/**/*.css'], {read: false});
+
+  return target.pipe(inject(sources))
+    .pipe(gulp.dest('./src'));
+});
+            </pre>
+            <p>
+                Jangan lupa di index.html ditambah placeholder
+            </p>
+            <pre>
+&lt;!-- inject:js --&gt;
+&lt;!-- endinject --&gt;
+
+&lt;!-- inject:css --&gt;
+&lt;!-- endinject --&gt;
+            </pre>
         </div>
     </div>
 </div>
