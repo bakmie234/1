@@ -55,6 +55,39 @@ git diff HEAD: diff between working directory last commit.
             <pre>
 git difftool
             </pre>
+            <p>
+                Branch
+            </p>
+            <pre>
+// create bracnh and switch to its branch
+git checkout -b branchName
+
+// long version
+git branch branchName
+git checkout branchName
+
+            </pre>
+            <p>
+                Merge
+            </p>
+            <pre>
+// Back to master and apply merge your branch into master
+git checkout master
+git merge hotfix
+
+// delete your branch if necessary
+git branch -d branchName
+            </pre>
+            <p>
+                Resolve conflict with mergetool and commit it
+            </p>
+            <pre>
+// open 3rd party merge tool
+git mergetool
+
+// commit changes
+git commit -a -m "message to commit"
+            </pre>
         </div>
     </div>
 </div>
