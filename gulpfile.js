@@ -1,5 +1,8 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
+//var inject = require('gulp-inject');
+var args = require('yargs').argv;
+var $ = require('gulp-load-plugins')({lazy: true});
 
 // Static server
 gulp.task('default', function() {
@@ -14,7 +17,6 @@ gulp.task('default', function() {
     });
 });
 
-var inject = require('gulp-inject');
 gulp.task('inject', function () {
     var target = gulp.src('./todoList.html');
     // It's not necessary to read the files (will speed up things), we're only after their paths:
@@ -25,12 +27,10 @@ gulp.task('inject', function () {
         ],
         {read: false});
 
-    return target.pipe(inject(sources))
+    return target.pipe($.inject(sources))
         .pipe(gulp.dest('./'));
 });
 
-var args = require('yargs').argv;
-var $ = require('gulp-load-plugins')({lazy: true});
 gulp.task('vet', function() {
     log('Analyzing source with JSHint and JSCS');
     var source = ['*/**/*.js',
