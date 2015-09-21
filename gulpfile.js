@@ -8,7 +8,9 @@ gulp.task('default', function() {
             baseDir: "./"
         },
         port: 8080,
-        files: ["*/**/*.*"]
+        files: ["*/**/*.*",
+            "*.html"
+        ]
     });
 });
 
