@@ -72,12 +72,82 @@ gulp.task('index', function () {
                 JsHint + JsCs
             </h3>
             <p>
-                jshint-stylish
+                JsCs need .jscsrc file in root.
             </p>
+            <pre>
+gulp.task('vet', function() {
+    log('Analyzing source with JSHint and JSCS');
+    var source = ['*/**/*.js',
+                    '!node_modules/**/*.*',
+                    '!3rdParty/**/*.*'
+    ];
+    return gulp
+        .src(source)
+        .pipe($.if(args.verbose, $.print()))
+        .pipe($.jscs())
+        .pipe($.jshint())
+        .pipe($.jshint.reporter('jshint-stylish', {verbose: true}))
+        .pipe($.jshint.reporter('fail'));
+});
+
+// log function
+function log(msg) {
+    if (typeof(msg) === 'object') {
+        for (var item in msg) {
+            if (msg.hasOwnProperty(item)) {
+                $.util.log($.util.colors.blue(msg[item]));
+            }
+        }
+    } else {
+        $.util.log($.util.colors.blue(msg));
+    }
+}
+            </pre>
+            <h3>
+                List Task
+            </h3>
+            <p>
+                list all registered gulp task
+            </p>
+            <pre>
+gulp.task('help', $.taskListing);
+            </pre>
+            <h3>
+                Image Minification
+            </h3>
+            <p>
+                gulp-imagemin
+            </p>
+            <pre>
+var gulp = require('gulp');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
+
+gulp.task('default', function () {
+    return gulp.src('src/images/*')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('dist/images'));
+});
+            </pre>
             <h3>
                 Utilities
             </h3>
             <ul>
+                <li>
+                    Clean Up
+                </li>
+                <pre>
+var del = require('del');
+
+function clean(path, done) {
+    log('Cleaning: ' + $.util.colors.blue(path));
+    del(path, done);
+}
+                </pre>
                 <li>
                     gulp-if
                 </li>
@@ -87,6 +157,20 @@ gulp.task('index', function () {
                 <li>
                     gulp-util
                 </li>
+                <pre>
+// log function
+function log(msg) {
+    if (typeof(msg) === 'object') {
+        for (var item in msg) {
+            if (msg.hasOwnProperty(item)) {
+                $.util.log($.util.colors.blue(msg[item]));
+            }
+        }
+    } else {
+        $.util.log($.util.colors.blue(msg));
+    }
+}
+                </pre>
                 <li>
                     gulp-load-plugins
                 </li>
