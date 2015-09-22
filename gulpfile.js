@@ -45,6 +45,7 @@ gulp.task('vet', function() {
         .pipe($.jshint.reporter('jshint-stylish', {verbose: true}))
         .pipe($.jshint.reporter('fail'));
 });
+gulp.task('help', $.taskListing);
 
 ////////////
 
