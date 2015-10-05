@@ -134,6 +134,18 @@ gulp.task('default', function () {
 });
             </pre>
             <h3>
+                Angular TemplateCache
+            </h3>
+            <pre>
+var templateCache = require('gulp-angular-templatecache');
+
+gulp.task('default', function () {
+  return gulp.src('templates/**/*.html')
+    .pipe(templateCache())
+    .pipe(gulp.dest('public'));
+});
+            </pre>
+            <h3>
                 Utilities
             </h3>
             <ul>

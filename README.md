@@ -1,1 +1,3 @@
 # 1 Check...
+Plain old repo for testing untested and random application
+Also it ha a documentation page inside it
